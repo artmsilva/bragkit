@@ -52,10 +52,11 @@ npm run web:dev                      # open the dashboard
 brag collect [--source a,b] [--since <date>] [--until <date>] [--enrich]
              [--github-repos o/r,o/r2] [--jira-projects K1,K2]
              [--confluence-spaces S1,S2] [--slack-channels c1,c2] [--db <path>] [--json]
-brag report  <period> [--template <name>] [--format markdown|json] [--out <file>]
+             [--include-created] [--include-updated]
+brag report  <period> [--template <name>] [--format markdown|json|csv|pdf] [--bands <file>] [--out <file>]
 brag export  [--out web/public/achievements.json]
 brag list    [--limit <n>]
-brag config                       Show which collectors are configured & ready
+brag config  [show|init|set <k> <v>|path]   Readiness check, or manage saved config
 brag runs    [--limit <n>]        Show the collection-run audit trail
 ```
 
@@ -123,8 +124,8 @@ const md = renderReport("by-project", store.query({ since, until }), { since, un
 ## Writing a collector
 
 A collector is one async function. Normalize your source into the
-[Achievement](src/achievement.js) shape and you're done — storage and reports
-are source-agnostic.
+[Achievement](src/achievement.ts) shape and you're done — storage and reports
+are source-agnostic. (See the `create-collector` skill for a full TypeScript template.)
 
 ```js
 import { register } from "bragkit";
@@ -170,8 +171,8 @@ Real exports are git-ignored (they may contain private data); only the fake
 
 This repo ships agent tooling. Open it in Claude Code and you get:
 
-- **Slash commands:** `/brag-collect`, `/brag-report`, `/brag-compensation`
-- **Skill:** `bragkit` (when/how to drive the toolkit)
+- **Slash commands:** `/brag-collect`, `/brag-report`, `/brag-compensation`, `/brag-quarterly`, `/brag-dashboard`
+- **Skills:** `bragkit` (when/how to drive the toolkit) and `create-collector` (add a new data source)
 - **Subagent:** `achievement-curator` for an end-to-end collect → report pass
 
 Contributor guidance — the zero-dependency rule, how to add a collector or
