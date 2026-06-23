@@ -19,7 +19,7 @@ brag-book plus new ideas. Keep entries short; move details into code/PRs.
 - [x] Bootstrap + vite-plus dashboard (cards, search, filters, theme, impact + kudos sections)
 - [x] Collection-run audit table + `brag runs`
 - [x] Agent tooling: `.claude/` commands, `bragkit` + `create-collector` skills, curator agent
-- [x] CI (`npm test` on Node 24+26, `tsc --noEmit` strict typecheck, smoke)
+- [x] CI (`npm test` on Node 26, `tsc --noEmit` strict typecheck, smoke)
 - [x] Jira created-issues (`--include-created`) + Confluence updated-pages (`--include-updated`), opt-in
 - [x] Slack thread replies + `chat.getPermalink` canonical URLs
 - [x] Named Slack reaction thresholds (engagement 3+, kudos 1+)
@@ -37,5 +37,5 @@ brag-book plus new ideas. Keep entries short; move details into code/PRs.
 
 ## Done — quality / infra
 
-- [x] CI: test (Node 24+26), typecheck (`tsc --noEmit`), publish-check
+- [x] CI: test (Node 26), typecheck (`tsc --noEmit`), publish-check
 - [x] `npx`-equivalent published-bin verification in a clean temp project

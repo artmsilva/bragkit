@@ -10,21 +10,17 @@ concurrency:
 
 jobs:
   test:
-    name: test (node ${{ matrix.node-version }})
+    name: test (node 26)
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [24, 26]
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 26
       # The core has zero runtime dependencies, so there is nothing to install —
       # node:test, node:sqlite, and parseArgs are all built in.
       - run: npm test
-      - run: node scripts/smoke.mjs
+      - run: npm run smoke
 
   typecheck:
     name: typecheck
@@ -33,7 +29,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 26
       - run: npm ci          # installs the dev-only typescript + @types/node
       - run: npm run typecheck
 
@@ -44,6 +40,6 @@ jobs:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 26
       - run: npm ci          # typescript needed to build dist/ on prepack
       - run: npm run pack-smoke
