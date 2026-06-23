@@ -199,5 +199,3 @@ prove the published artifact works (also a CI job).
 ## License
 
 MIT © Arturo Silva
-
-MIT © Arturo Silva
