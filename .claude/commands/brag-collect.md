@@ -1,12 +1,12 @@
 ---
 description: Collect achievements into the local bragkit database
 argument-hint: [--source github,jira] [--since "30 days ago"] [--until today] [--enrich]
-allowed-tools: Bash(node bin/brag.js:*)
+allowed-tools: Bash(node bin/brag.ts:*)
 ---
 
 Collect professional achievements using the bragkit CLI, then report the result.
 
-1. Run: `node bin/brag.js collect $ARGUMENTS --json`
+1. Run: `node bin/brag.ts collect $ARGUMENTS --json`
    (If the user gave no arguments, collect the last 30 days from every configured collector.)
 2. Parse the JSON summary (`collected`, `bySource`, `errors`).
 3. If any error mentions missing credentials, tell the user the exact fix:

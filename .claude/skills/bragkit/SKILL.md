@@ -16,17 +16,17 @@ a local SQLite database and turns them into markdown reports and a dashboard.
 
 ## Workflow
 
-1. **Check setup:** `node bin/brag.js config` — shows which collectors are ready
+1. **Check setup:** `node bin/brag.ts config` — shows which collectors are ready
    and how to configure the rest. Don't guess at credentials; point the user to
    the exact env var / auth step.
-2. **Collect:** `node bin/brag.js collect --since "<date>" [--source ...] [--enrich]`.
+2. **Collect:** `node bin/brag.ts collect --since "<date>" [--source ...] [--enrich]`.
    `--enrich` adds GitHub code-volume metrics (one API call per PR). Use scope
    flags (`--github-repos`, `--jira-projects`, …) to narrow.
-3. **Report:** `node bin/brag.js report "<period>" --template <name>`.
+3. **Report:** `node bin/brag.ts report "<period>" --template <name>`.
    Templates: `timeline`, `by-project`, `executive-summary`, `brag-sheet`,
    `compensation`. Add `--format json` to pipe elsewhere.
-4. **Browse / audit:** `node bin/brag.js list`, `node bin/brag.js runs`, or
-   `node bin/brag.js export` + `npm run web:dev` for the dashboard.
+4. **Browse / audit:** `node bin/brag.ts list`, `node bin/brag.ts runs`, or
+   `node bin/brag.ts export` + `npm run web:dev` for the dashboard.
 
 ## Principles
 
