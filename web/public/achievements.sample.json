@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2025-01-01T00:00:00.000Z",
+  "stats": {
+    "total": 5,
+    "bySource": { "github": 4, "demo": 1 },
+    "byType": { "pr_merged": 4, "talk": 1 }
+  },
+  "achievements": [
+    {
+      "id": "github:pr_merged:octo/widget:42",
+      "source": "github",
+      "type": "pr_merged",
+      "title": "feat: add dark-mode tokens to the widget library",
+      "url": "https://github.com/octo/widget/pull/42",
+      "date": "2025-06-18T14:00:00.000Z",
+      "tags": ["pull-request", "octo/widget"],
+      "metadata": { "repository": "octo/widget", "number": 42 }
+    },
+    {
+      "id": "github:pr_merged:octo/widget:41",
+      "source": "github",
+      "type": "pr_merged",
+      "title": "fix: prevent layout shift on async image load",
+      "url": "https://github.com/octo/widget/pull/41",
+      "date": "2025-06-12T09:30:00.000Z",
+      "tags": ["pull-request", "octo/widget"],
+      "metadata": { "repository": "octo/widget", "number": 41 }
+    },
+    {
+      "id": "github:pr_merged:octo/api:108",
+      "source": "github",
+      "type": "pr_merged",
+      "title": "perf: cache the manifest lookup (P95 -38%)",
+      "url": "https://github.com/octo/api/pull/108",
+      "date": "2025-05-29T16:45:00.000Z",
+      "tags": ["pull-request", "octo/api"],
+      "metadata": { "repository": "octo/api", "number": 108 }
+    },
+    {
+      "id": "github:pr_merged:octo/api:101",
+      "source": "github",
+      "type": "pr_merged",
+      "title": "ci: migrate release workflow to reusable GitHub Action",
+      "url": "https://github.com/octo/api/pull/101",
+      "date": "2025-05-20T11:00:00.000Z",
+      "tags": ["pull-request", "octo/api", "ci"],
+      "metadata": { "repository": "octo/api", "number": 101 }
+    },
+    {
+      "id": "demo:talk:devconf-2025",
+      "source": "demo",
+      "type": "talk",
+      "title": "Talk: Zero-dependency tooling with the Node platform",
+      "url": "https://example.com/devconf-2025",
+      "date": "2025-04-10T18:00:00.000Z",
+      "tags": ["speaking", "conference"],
+      "metadata": { "event": "DevConf 2025" }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+node_modules/
+web/dist/
+# Real exports may contain private data — only the fake sample is committed.
+web/public/achievements.json
+*.db
+.DS_Store
+dist/

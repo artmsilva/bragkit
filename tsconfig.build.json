@@ -1,0 +1,13 @@
+{
+  "//": "Publish-only build. Dev runs .ts natively (no build); npm cannot type-strip files under node_modules, so the published package ships compiled .js + .d.ts. `rewriteRelativeImportExtensions` turns the source's .ts import specifiers into .js in the emitted output.",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": ".",
+    "declaration": true,
+    "rewriteRelativeImportExtensions": true
+  },
+  "include": ["src", "bin"],
+  "exclude": ["node_modules", "web", "test", "scripts"]
+}

@@ -1,0 +1,62 @@
+{
+  "name": "bragkit",
+  "version": "0.1.0",
+  "description": "A dependency-free engine for tracking professional achievements — collect, store, and report.",
+  "author": "Arturo Silva (https://github.com/artmsilva)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artmsilva/bragkit.git"
+  },
+  "homepage": "https://github.com/artmsilva/bragkit#readme",
+  "bugs": {
+    "url": "https://github.com/artmsilva/bragkit/issues"
+  },
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "//": "Dev runs TypeScript natively (`node bin/brag.ts`). The PUBLISHED package ships compiled JS from dist/ (Node can't type-strip under node_modules); `prepack`/`prepare` build it.",
+  "bin": {
+    "brag": "dist/bin/brag.js"
+  },
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": "./dist/src/index.js",
+    "./store": "./dist/src/store.js",
+    "./collectors": "./dist/src/collectors/registry.js",
+    "./reports": "./dist/src/reports/markdown.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "smoke": "node scripts/smoke.ts",
+    "pack-smoke": "node scripts/pack-smoke.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "prepack": "npm run build",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run typecheck && npm test && npm run pack-smoke",
+    "web:dev": "vp dev web",
+    "web:build": "vp build web"
+  },
+  "keywords": [
+    "achievements",
+    "brag-book",
+    "career",
+    "performance-review",
+    "github",
+    "sqlite",
+    "zero-dependencies"
+  ],
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "typescript": "^6.0.3",
+    "vite-plus": "^0.2.1"
+  }
+}

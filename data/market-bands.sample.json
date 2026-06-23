@@ -1,0 +1,9 @@
+{
+  "currency": "USD",
+  "note": "EXAMPLE FILE — placeholder data only. Replace every median with your own researched figures (e.g. from levels.fyi, internal bands, or recruiter ranges) before relying on this. Zeroes mean 'not set'.",
+  "bands": [
+    { "level": "Senior", "median": 0 },
+    { "level": "Staff", "median": 0 },
+    { "level": "Principal", "median": 0 }
+  ]
+}
